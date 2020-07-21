@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Game</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    .game {
+      position: relative;
+    }
+
+    .scoreBoard {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      justify-content: space-around;
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+
+    .btn {
+      padding: 3px 10px;
+      background-color: transparent;
+      color: white;
+      text-transform: uppercase;
+      transition: 0.3s;
+      border: 1px solid white;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: black
+    }
+
+    .scoreBoard__reset {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .gameEnd {
+      flex-wrap: wrap;
+      padding: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+      width: 50%;
+      border: 2px solid white;
+      border-radius: 5px;
+    }
+
+    .gameEnd .scoreBoard__reset {
+      display: block;
+    }
+
+    .gameEnd>div {
+      width: 50%
+    }
+
+    .gameStart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      border-width: 2px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="game">
+    <div class="scoreBoard">
+      <div>
+        <div class="scoreBoard__actualScore">000</div>
+        Twój wynik
+      </div>
+      <div>
+        <div class="scoreBoard__highestScore">000</div>
+        Rekord
+      </div>
+      <button class="btn scoreBoard__reset">Restart</button>
+    </div>
+    <button class="btn gameStart">Start</button>
+    <canvas id='canvas'></canvas>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
